@@ -41,8 +41,9 @@ function getStudentById(req, res) {
   const student = studentsList.find((student) => student.pos == id);
   if (student) {
     res.status(200).json({
-      status: 200,
-      student,
+      pos: student.pos,
+      email: student.email,
+      name: student.name,
     });
   } else {
     notFound(req, res);
